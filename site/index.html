@@ -1,0 +1,475 @@
+<!doctype html>
+<html lang="en" class="no-js">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Gabriel Velozo · Shopify developer</title>
+<meta name="description" content="Shopify developer in Brazil. Four demo stores you can open (fashion, skincare, jewelry in 3D and personalized gifts) and the parts of a store I build, from the product page to checkout. 30% off your first project.">
+<link rel="canonical" href="https://gabrielvelozo.pages.dev/">
+<link rel="alternate" hreflang="en" href="https://gabrielvelozo.pages.dev/">
+<link rel="alternate" hreflang="pt-BR" href="https://gabrielvelozo.pages.dev/br/">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://gabrielvelozo.pages.dev/">
+<meta property="og:title" content="Gabriel Velozo · Shopify developer">
+<meta property="og:description" content="Shopify stores that sell, made to measure. Four demo stores you can open, and 30% off your first project.">
+<meta property="og:image" content="https://gabrielvelozo.pages.dev/img/og.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#F3F1EC">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="preload" href="/fonts/instrument-serif-400.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/fonts/instrument-serif-400-italic.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/fonts/inter-tight-var.woff2" as="font" type="font/woff2" crossorigin>
+<script>document.documentElement.className="js"</script>
+<link rel="stylesheet" href="/site.css">
+</head>
+<body>
+<svg class="icons" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+  <symbol id="i-route" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"><path d="M12 3v18"/><circle cx="12" cy="12" r="3.2" fill="currentColor" stroke="none"/></symbol>
+  <symbol id="i-hanger" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M10 5.6a2 2 0 1 1 2.7 1.9c-.4.2-.7.5-.7 1V9.5"/><path d="M12 9.5 3.6 15.6c-.6.4-.3 1.4.5 1.4h15.8c.8 0 1.1-1 .5-1.4L12 9.5Z"/></symbol>
+  <symbol id="i-drop" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"><path d="M12 3.5s-6 6.3-6 10.4a6 6 0 0 0 12 0C18 9.8 12 3.5 12 3.5Z"/></symbol>
+  <symbol id="i-gem" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"><path d="M6.5 4h11l3.5 5-9 11L3 9l3.5-5Z"/><path d="M3 9h18M12 20 8.5 9l2-5M12 20l3.5-11-2-5"/></symbol>
+  <symbol id="i-gift" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"><path d="M4.5 11h15v9h-15zM3.5 7.5h17V11h-17zM12 7.5V20"/><path d="M12 7.5C10.5 4.5 7 4.3 7 6.2c0 1.4 2.6 1.3 5 1.3Zm0 0c1.5-3 5-3.2 5-1.3 0 1.4-2.6 1.3-5 1.3Z"/></symbol>
+  <symbol id="i-pointer" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"><path d="m5.5 3.5 13 6.6-5.7 1.8-2.4 5.6-4.9-14Z"/><path d="m13 12.2 5 5"/></symbol>
+  <symbol id="i-bag" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"><path d="M5 8h14l-1 12.5H6L5 8Z"/><path d="M9 10V6.5a3 3 0 0 1 6 0V10"/></symbol>
+  <symbol id="i-bolt" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"><path d="M13.5 2.5 5 13.5h6.5l-1 8 8.5-11h-6.5l1-8Z"/></symbol>
+  <symbol id="i-plug" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M9 3v4.5M15 3v4.5M6.5 7.5h11v3a5.5 5.5 0 0 1-11 0v-3ZM12 16v5"/></symbol>
+  <symbol id="i-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="m4.5 12.5 4.8 4.8L19.5 7"/></symbol>
+  <symbol id="i-mail" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"><path d="M3.5 6h17v12h-17z"/><path d="m4 7 8 6 8-6"/></symbol>
+  <symbol id="i-ext" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7M9 7h8v8"/></symbol>
+  <symbol id="i-down" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14M6 13l6 6 6-6"/></symbol>
+  <symbol id="i-copy" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"><path d="M9 9h11v11H9z"/><path d="M5 15H4V4h11v1"/></symbol>
+  <symbol id="i-play" viewBox="0 0 12 12"><path fill="currentColor" d="M2.5 1.2v9.6L10.5 6z"/></symbol>
+  <symbol id="i-again" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12a8 8 0 1 0 2.4-5.7M4 4v4.5h4.5"/></symbol>
+</svg>
+
+<a class="skip" href="#arara">Skip to the work</a>
+
+<header class="top">
+  <div class="wrap top__bar">
+    <a class="brand" href="#top" aria-label="Gabriel Velozo, back to the top"><span class="brand__dot"></span>Gabriel Velozo <small>Shopify developer</small></a>
+    <nav class="nav" aria-label="Sections">
+      <a href="#stores">Stores</a>
+      <a href="#inside">Inside a store</a>
+      <a href="#how">How I work</a>
+      <a href="#contact">Contact</a>
+    </nav>
+    <div class="top__end">
+      <button class="here" type="button" aria-expanded="false" aria-controls="route-sheet" data-start="Route" aria-label="Where you are on the route; open the list of stops"><span class="here__icon"><svg aria-hidden="true"><use href="#i-route"/></svg></span><span class="here__num">00</span><span class="here__name">Route</span></button>
+      <a class="lang" href="/br/" hreflang="pt-BR" lang="pt-BR" aria-label="Versão em português">PT</a>
+    </div>
+  </div>
+  <div class="progress" aria-hidden="true"></div>
+</header>
+<nav class="sheet" id="route-sheet" aria-label="The route" hidden></nav>
+
+<main id="top">
+  <div class="route-layer" aria-hidden="true">
+    <div class="wrap">
+      <div class="route">
+        <div class="route__track"></div>
+        <div class="route__fill"></div>
+        <div class="route__dot"><i></i><svg><use href="#i-route"/></svg></div>
+      </div>
+    </div>
+  </div>
+
+  <section class="hero" aria-labelledby="hero-title">
+    <div class="wrap hero__grid">
+      <div>
+        <p class="label">Shopify developer · Brazil, UTC−3</p>
+        <h1 id="hero-title">Shopify stores that sell, <em>made to measure.</em></h1>
+        <div class="ruler" aria-hidden="true"><i></i></div>
+        <p class="hero__lead">I'm Gabriel. A fashion label, a skincare brand and a jeweler each sell in their own way, so I build the store around the way yours sells. Follow the line: it takes you through four stores I built and the parts of a store I work on, from the product page to checkout.</p>
+        <p class="promo"><i aria-hidden="true"></i>30% off your first project with me</p>
+        <div class="ctas" id="hero-ctas">
+          <a class="btn btn--ink" href="#arara">Follow the line <svg class="down" aria-hidden="true"><use href="#i-down"/></svg></a>
+          <a class="btn btn--line" href="mailto:gabrielvelozodev@gmail.com?subject=Shopify%20project">Email me</a>
+        </div>
+      </div>
+      <div class="route-card">
+        <div class="route-card__head"><p class="label">The route</p><p class="label">10 stops</p></div>
+        <ol class="index">
+          <li><a href="#arara" data-thumb="/img/arara3-640.webp"><span class="n">01</span><span class="t">Arara</span><span class="k">Fashion, Brazil</span></a></li>
+          <li><a href="#dewlane" data-thumb="/img/dewlane2-640.webp"><span class="n">02</span><span class="t">Dewlane</span><span class="k">Skincare</span></a></li>
+          <li><a href="#nocte" data-thumb="/img/nocte3-640.webp"><span class="n">03</span><span class="t">Nocte</span><span class="k">Jewelry in 3D</span></a></li>
+          <li><a href="#inkly" data-thumb="/img/tour-640.webp"><span class="n">04</span><span class="t">Inkly</span><span class="k">Personalized gifts</span></a></li>
+          <li><a href="#product" data-thumb="/img/p-nocte-engraving-720.webp"><span class="n">05</span><span class="t">Product page</span><span class="k">All four</span></a></li>
+          <li><a href="#checkout" data-thumb="/img/c-dewlane-routine-720.webp"><span class="n">06</span><span class="t">Cart &amp; checkout</span><span class="k">All four</span></a></li>
+          <li><a href="#speed" data-thumb="/img/speed-640.webp"><span class="n">07</span><span class="t">Speed</span><span class="k">11.9 s → 3.5 s</span></a></li>
+          <li><a href="#apps" data-thumb="/img/erp-640.webp"><span class="n">08</span><span class="t">Apps</span><span class="k">ERP sync</span></a></li>
+          <li><a href="#how"><span class="n">09</span><span class="t">How I work</span><span class="k">4 rules</span></a></li>
+          <li><a href="#contact"><span class="n">10</span><span class="t">Contact</span><span class="k">30% off</span></a></li>
+        </ol>
+      </div>
+    </div>
+  </section>
+
+  <section class="intro" id="stores" aria-labelledby="stores-title">
+    <div class="wrap wrap--rail">
+      <p class="label">Four demo stores</p>
+      <h2 id="stores-title">Four stores, <em>four ways to sell</em></h2>
+      <p>The store I work on every day isn't mine to show, so I built these on Shopify to show the same kind of work. The products are fictional and nothing ships; everything else works. Each store asks for a password, and it's right next to its button.</p>
+    </div>
+  </section>
+
+  <section class="chapter" id="arara" data-stop data-num="01" data-short="Arara" data-icon="hanger" aria-labelledby="arara-title">
+    <div class="wrap wrap--rail">
+      <p class="num"><b>01</b> Fashion · Brazil</p>
+      <div class="store">
+        <div class="store__media rise">
+          <div class="frame" style="--c:#2336D8">
+            <div class="frame__bar"><i></i><i></i><i></i><span>arara-demo.myshopify.com</span><b></b></div>
+            <a class="video" href="/video/arara3.mp4" data-mp4="/video/arara3.mp4" data-title="Arara, a fashion store for Brazil, in 24 seconds">
+              <img src="/img/arara3-640.webp" srcset="/img/arara3-640.webp 640w, /img/arara3-1280.webp 1280w" sizes="(min-width:1000px) 42rem, calc(100vw - 40px)" width="1280" height="720" alt="The Arara home page: a smiling model in a yellow ruffled sundress over a cobalt cover with the word SOL" loading="lazy" decoding="async">
+              <span class="play"><i><svg aria-hidden="true"><use href="#i-play"/></svg></i>Watch · 0:24</span>
+            </a>
+          </div>
+          <p class="media-note"><span>Video, no sound</span><span>Portuguese · reais</span></p>
+        </div>
+        <div class="store__body">
+          <h3 id="arara-title">A fashion store ready to sell <em>in Brazil</em></h3>
+          <p class="store__lead">Brazilian shoppers check the Pix price, the installments, the shipping to their postcode and their size before anything else. Most themes show none of it, so stores stack paid apps and slow down.</p>
+          <ul class="feats">
+            <li>The Pix price and “6x interest-free” on every price</li>
+            <li>Shipping quoted by postcode on the product page and in the bag</li>
+            <li>A size finder that turns measurements into a size</li>
+            <li>Photos for each color, quick add, shop-the-look and back-in-stock requests</li>
+          </ul>
+          <p class="result"><b>For your store:</b> shoppers see what they'll pay, the shipping and their size before checkout, with no monthly app behind it, and you edit all of it in the Shopify admin.</p>
+          <div class="actions">
+            <a class="btn btn--ink" href="https://arara-demo.myshopify.com" target="_blank" rel="noopener">Open the store <svg class="ext" aria-hidden="true"><use href="#i-ext"/></svg></a>
+            <button class="pass" type="button" data-copy="arara" data-done="Password copied">Password <code>arara</code><svg class="cp" aria-hidden="true"><use href="#i-copy"/></svg><svg class="ok" aria-hidden="true"><use href="#i-check"/></svg></button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="chapter" id="dewlane" data-stop data-num="02" data-short="Dewlane" data-icon="drop" aria-labelledby="dewlane-title">
+    <div class="wrap wrap--rail">
+      <p class="num"><b>02</b> Beauty · Skincare</p>
+      <div class="store store--flip">
+        <div class="store__media rise">
+          <div class="frame" style="--c:#D9C2BC">
+            <div class="frame__bar"><i></i><i></i><i></i><span>dewlane-demo.myshopify.com</span><b></b></div>
+            <a class="video" href="/video/dewlane2.mp4" data-mp4="/video/dewlane2.mp4" data-title="Dewlane, a skincare store, in 25 seconds">
+              <img src="/img/dewlane2-640.webp" srcset="/img/dewlane2-640.webp 640w, /img/dewlane2-1280.webp 1280w" sizes="(min-width:1000px) 42rem, calc(100vw - 40px)" width="1280" height="720" alt="The Dewlane home page: a woman with her eyes closed in window light, the line three steps to skin that looks rested and a card that adds the routine of three" loading="lazy" decoding="async">
+              <span class="play"><i><svg aria-hidden="true"><use href="#i-play"/></svg></i>Watch · 0:25</span>
+            </a>
+          </div>
+          <p class="media-note"><span>Video, no sound</span><span>English · US dollars</span></p>
+        </div>
+        <div class="store__body">
+          <h3 id="dewlane-title">A skincare store that sells <em>the routine</em>, not one bottle</h3>
+          <p class="store__lead">Skincare shoppers buy a routine, and few know which three products to pick. Stores answer with a bundle app, a quiz app and a reviews app, each with its own bill and its own look.</p>
+          <ul class="feats">
+            <li>Any three products make a routine, with 15% off from a Shopify automatic discount</li>
+            <li>A five-question skin quiz that picks three products and says why</li>
+            <li>Product pages with the texture, the hero ingredient, shades and a before-and-after slider</li>
+            <li>A journal that sells the products it mentions</li>
+          </ul>
+          <p class="result"><b>For your store:</b> bigger orders without a bundle app. The discount, the quiz answers, the shades and the reviews are fields in the admin, not code.</p>
+          <div class="actions">
+            <a class="btn btn--ink" href="https://dewlane-demo.myshopify.com" target="_blank" rel="noopener">Open the store <svg class="ext" aria-hidden="true"><use href="#i-ext"/></svg></a>
+            <button class="pass" type="button" data-copy="dewlane" data-done="Password copied">Password <code>dewlane</code><svg class="cp" aria-hidden="true"><use href="#i-copy"/></svg><svg class="ok" aria-hidden="true"><use href="#i-check"/></svg></button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="chapter" id="nocte" data-stop data-num="03" data-short="Nocte" data-icon="gem" aria-labelledby="nocte-title">
+    <div class="wrap wrap--rail">
+      <p class="num"><b>03</b> Fine jewelry · 3D</p>
+      <div class="store">
+        <div class="store__media rise">
+          <div class="frame" style="--c:#0E1E1A">
+            <div class="frame__bar"><i></i><i></i><i></i><span>nocte-demo.myshopify.com</span><b></b></div>
+            <a class="video" href="/video/nocte3.mp4" data-mp4="/video/nocte3.mp4" data-title="Nocte, a jewelry store in 3D, in 20 seconds">
+              <img src="/img/nocte3-640.webp" srcset="/img/nocte3-640.webp 640w, /img/nocte3-1280.webp 1280w" sizes="(min-width:1000px) 42rem, calc(100vw - 40px)" width="1280" height="720" alt="The Nocte home page: a gold solitaire ring in 3D over the word Nocte" loading="lazy" decoding="async">
+              <span class="play"><i><svg aria-hidden="true"><use href="#i-play"/></svg></i>Watch · 0:20</span>
+            </a>
+          </div>
+          <p class="media-note"><span>Video, no sound</span><span>three.js · WebGL</span></p>
+        </div>
+        <div class="store__body">
+          <h3 id="nocte-title">Fine jewelry you can <em>turn in your hand</em></h3>
+          <p class="store__lead">Jewelry sells on detail and trust. Shoppers want to see the stone up close, in the metal they picked, and to know the ring will fit.</p>
+          <ul class="feats">
+            <li>Every piece modeled in 3D, with a diamond shader that bends light inside the stone</li>
+            <li>Metal and stone change with the variant; drag to turn it and read the engraving inside the band</li>
+            <li>A ring size guide, gift wrap with a card, consultation booking and AR on iPhone</li>
+            <li>A jeweler's-glass layer in WebGL: a loupe over the product cards and the name cast in gold</li>
+          </ul>
+          <p class="result"><b>For your store:</b> shoppers see the exact piece they're buying, so fewer stop to ask and fewer rings come back. The 3D only loads after the first interaction.</p>
+          <div class="actions">
+            <a class="btn btn--ink" href="https://nocte-demo.myshopify.com" target="_blank" rel="noopener">Open the store <svg class="ext" aria-hidden="true"><use href="#i-ext"/></svg></a>
+            <button class="pass" type="button" data-copy="nocte" data-done="Password copied">Password <code>nocte</code><svg class="cp" aria-hidden="true"><use href="#i-copy"/></svg><svg class="ok" aria-hidden="true"><use href="#i-check"/></svg></button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="chapter" id="inkly" data-stop data-num="04" data-short="Inkly" data-icon="gift" aria-labelledby="inkly-title">
+    <div class="wrap wrap--rail">
+      <p class="num"><b>04</b> Personalized gifts</p>
+      <div class="store store--flip">
+        <div class="store__media rise">
+          <div class="frame" style="--c:#F2A7C3">
+            <div class="frame__bar"><i></i><i></i><i></i><span>inkly-demo.myshopify.com</span><b></b></div>
+            <a class="video" href="https://www.youtube.com/watch?v=NEYUIo16DfA" data-yt="NEYUIo16DfA" data-title="Inkly, the demo store, in 22 seconds">
+              <img src="/img/tour-640.webp" srcset="/img/tour-640.webp 640w, /img/tour-1280.webp 1280w" sizes="(min-width:1000px) 42rem, calc(100vw - 40px)" width="1280" height="720" alt="The Inkly demo store's home page: a mug with a customer's text printed on it" loading="lazy" decoding="async">
+              <span class="play"><i><svg aria-hidden="true"><use href="#i-play"/></svg></i>Watch · 0:22</span>
+            </a>
+          </div>
+          <p class="media-note"><span>Video, no sound</span><span>English · US dollars</span></p>
+        </div>
+        <div class="store__body">
+          <h3 id="inkly-title">Customers see their gift <em>before they pay</em></h3>
+          <p class="store__lead">Personalized gifts sell on trust. The customer wants to see their name or photo on the mug before paying, and the shop needs to know exactly what to print.</p>
+          <ul class="feats">
+            <li>Text and photo previewed live on a mug, tee or tote, in 2D or 3D</li>
+            <li>A warning before checkout when a photo would print blurry</li>
+            <li>A cart drawer with a free-shipping ribbon and one-click add-ons</li>
+            <li>A speed pass and an app that syncs orders with an ERP, both further down the line</li>
+          </ul>
+          <p class="result"><b>For your store:</b> the customer buys what they saw, and the order arrives with the text, the font, the photo and a preview image.</p>
+          <div class="actions">
+            <a class="btn btn--ink" href="https://inkly-demo.myshopify.com" target="_blank" rel="noopener">Open the store <svg class="ext" aria-hidden="true"><use href="#i-ext"/></svg></a>
+            <button class="pass" type="button" data-copy="inkly" data-done="Password copied">Password <code>inkly</code><svg class="cp" aria-hidden="true"><use href="#i-copy"/></svg><svg class="ok" aria-hidden="true"><use href="#i-check"/></svg></button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="turn" id="inside" aria-labelledby="inside-title">
+    <div class="wrap wrap--rail">
+      <p class="label">Inside a store</p>
+      <h2 id="inside-title">The same work, <em>part by part</em></h2>
+      <p>These are the parts of a store people ask me for most. Under each one, pick a store and see how it was done there.</p>
+    </div>
+  </section>
+
+  <section class="chapter" id="product" data-stop data-num="05" data-short="Product" data-icon="pointer" aria-labelledby="product-title">
+    <div class="wrap wrap--rail">
+      <p class="num"><b>05</b> Product page</p>
+      <div class="cap">
+        <div class="cap__body">
+          <h3 id="product-title">Answer the question <em>before it's asked</em></h3>
+          <p class="cap__lead">Most product pages show a photo, a price and a button. The ones that sell show exactly what the shopper will get: their size, their shade, their engraving, their name on the gift.</p>
+          <div class="toy engrave-toy">
+            <div class="toy__head"><p class="label">Try it</p><small>like on Nocte</small></div>
+            <div class="engrave">
+              <svg viewBox="0 0 200 200" aria-hidden="true">
+                <defs><path id="band-path" d="M23 100a77 77 0 0 0 154 0"/></defs>
+                <path class="band" fill-rule="evenodd" d="M100 18a82 82 0 1 1 0 164a82 82 0 1 1 0-164Zm0 22a60 60 0 1 0 0 120a60 60 0 1 0 0-120Z"/>
+                <path class="stone" d="M86 13h28l8 9-22 18-22-18 8-9Z"/>
+                <path class="glint" d="M100 3l2.5 7.5L110 13l-7.5 2.5L100 23l-2.5-7.5L90 13l7.5-2.5Z"/>
+                <text><textPath href="#band-path" startOffset="50%" text-anchor="middle" class="engrave__text">Always, A.</textPath></text>
+              </svg>
+              <div>
+                <label for="engrave-input">Engrave a ring</label>
+                <input id="engrave-input" type="text" maxlength="14" value="Always, A." placeholder="Always, A." autocomplete="off" spellcheck="false">
+                <p class="hint">Up to 14 characters, inside the band.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="cap__media rise">
+          <div class="proof">
+            <div class="proof__tabs" role="group" aria-label="Pick a store">
+              <button class="proof__tab" type="button" aria-pressed="true" style="--c:#0E1E1A"><i></i>Nocte</button>
+              <button class="proof__tab" type="button" aria-pressed="false" style="--c:#2336D8"><i></i>Arara</button>
+              <button class="proof__tab" type="button" aria-pressed="false" style="--c:#D9C2BC"><i></i>Dewlane</button>
+              <button class="proof__tab" type="button" aria-pressed="false" style="--c:#F2A7C3"><i></i>Inkly</button>
+            </div>
+            <div class="frame">
+              <div class="frame__bar"><i></i><i></i><i></i><span>Product page</span></div>
+              <div class="proof__stage">
+                <div class="proof__panel is-on"><img src="/img/p-nocte-engraving-720.webp" srcset="/img/p-nocte-engraving-720.webp 720w, /img/p-nocte-engraving-1280.webp 1280w" sizes="(min-width:1000px) 42rem, calc(100vw - 40px)" width="1280" height="800" alt="Nocte's product page: a rose-gold band in 3D with Always, A. engraved inside, next to the metal, ring size and engraving options" loading="lazy" decoding="async"></div>
+                <div class="proof__panel"><img src="/img/p-arara-product-720.webp" srcset="/img/p-arara-product-720.webp 720w, /img/p-arara-product-1280.webp 1280w" sizes="(min-width:1000px) 42rem, calc(100vw - 40px)" width="1280" height="800" alt="Arara's product page: a cobalt midi dress with the Pix price, six interest-free installments, two colors and the size guide" loading="lazy" decoding="async"></div>
+                <div class="proof__panel"><img src="/img/p-dewlane-product-720.webp" srcset="/img/p-dewlane-product-720.webp 720w, /img/p-dewlane-product-1280.webp 1280w" sizes="(min-width:1000px) 42rem, calc(100vw - 40px)" width="1280" height="800" alt="Dewlane's product page: a pink lip balm tube with four shades, the routine offer and what it is good for" loading="lazy" decoding="async"></div>
+                <div class="proof__panel"><img src="/img/personalizer-640.webp" srcset="/img/personalizer-640.webp 640w, /img/personalizer-1280.webp 1280w" sizes="(min-width:1000px) 42rem, calc(100vw - 40px)" width="1280" height="720" alt="Inkly's product page: a mug with the customer's text printed on it, next to font and color choices" loading="lazy" decoding="async"></div>
+              </div>
+            </div>
+            <div class="proof__caps" aria-live="polite">
+              <p class="is-on"><b>Nocte.</b> The ring in 3D, in the metal the shopper picked, with the engraving inside the band.</p>
+              <p><b>Arara.</b> The Pix price, six interest-free installments, a photo set for each color and the size guide one tap away.</p>
+              <p><b>Dewlane.</b> Shades as swatches, how it feels and what it's good for, and a link to the routine with 15% off.</p>
+              <p><b>Inkly.</b> The customer's text printed live on the mug as they type, in 2D or in a 3D view they can turn.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="chapter" id="checkout" data-stop data-num="06" data-short="Checkout" data-icon="bag" aria-labelledby="checkout-title">
+    <div class="wrap wrap--rail">
+      <p class="num"><b>06</b> Cart &amp; checkout</p>
+      <div class="cap">
+        <div class="cap__body">
+          <h3 id="checkout-title">Where the sale is <em>won or lost</em></h3>
+          <p class="cap__lead">The cart is the last stop before checkout. It should show the real total and the shipping, say what's left for free shipping and let the shopper add one more thing without leaving.</p>
+          <ul class="feats">
+            <li>Prices the way your shoppers pay: Pix and installments in Brazil, a bundle discount in the bag</li>
+            <li>Free-shipping progress, one-click add-ons and gift wrap with a card</li>
+            <li>Discounts that are real Shopify discounts, so the number in the cart is the number at checkout</li>
+            <li>On Shopify Plus, checkout extensions: a gift option, a survey on the Thank-you page, delivery rules with Functions</li>
+          </ul>
+        </div>
+        <div class="cap__media rise">
+          <div class="proof">
+            <div class="proof__tabs" role="group" aria-label="Pick a store">
+              <button class="proof__tab" type="button" aria-pressed="true" style="--c:#2336D8"><i></i>Arara</button>
+              <button class="proof__tab" type="button" aria-pressed="false" style="--c:#D9C2BC"><i></i>Dewlane</button>
+              <button class="proof__tab" type="button" aria-pressed="false" style="--c:#0E1E1A"><i></i>Nocte</button>
+              <button class="proof__tab" type="button" aria-pressed="false" style="--c:#F2A7C3"><i></i>Inkly</button>
+            </div>
+            <div class="frame">
+              <div class="frame__bar"><i></i><i></i><i></i><span>Cart</span></div>
+              <div class="proof__stage">
+                <div class="proof__panel proof__panel--phone is-on" style="--c:#2336D8"><div class="phone"><img src="/img/c-arara-cart-360.webp" srcset="/img/c-arara-cart-360.webp 360w, /img/c-arara-cart-720.webp 720w" sizes="14rem" width="720" height="1558" alt="Arara's bag on a phone: the free-shipping bar, a sundress, the total with the Pix price and installments, and shipping by postcode" loading="lazy" decoding="async"></div></div>
+                <div class="proof__panel"><img src="/img/c-dewlane-routine-720.webp" srcset="/img/c-dewlane-routine-720.webp 720w, /img/c-dewlane-routine-1280.webp 1280w" sizes="(min-width:1000px) 42rem, calc(100vw - 40px)" width="1280" height="800" alt="Dewlane's routine builder: three products picked and a bar saying 15% off unlocked, with the new total" loading="lazy" decoding="async"></div>
+                <div class="proof__panel"><img src="/img/c-nocte-gift-720.webp" srcset="/img/c-nocte-gift-720.webp 720w, /img/c-nocte-gift-1280.webp 1280w" sizes="(min-width:1000px) 42rem, calc(100vw - 40px)" width="1280" height="800" alt="Nocte's bag: gift packaging added with a message for the card, under a ring with its engraving" loading="lazy" decoding="async"></div>
+                <div class="proof__panel"><img src="/img/cart-640.webp" srcset="/img/cart-640.webp 640w, /img/cart-1280.webp 1280w" sizes="(min-width:1000px) 42rem, calc(100vw - 40px)" width="1280" height="720" alt="Inkly's cart drawer open over the store, with free shipping unlocked" loading="lazy" decoding="async"></div>
+              </div>
+            </div>
+            <div class="proof__caps" aria-live="polite">
+              <p class="is-on"><b>Arara.</b> In the bag: how much is left for free shipping, the Pix price, the installments and the shipping to the shopper's postcode.</p>
+              <p><b>Dewlane.</b> Pick any three and the 15% comes off in the bag, no code to type.</p>
+              <p><b>Nocte.</b> Gift wrap and a handwritten card, chosen in the bag and saved to the order.</p>
+              <p><b>Inkly.</b> A cart drawer with a free-shipping ribbon that ties a bow, and add-ons in one click.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="chapter" id="speed" data-stop data-num="07" data-short="Speed" data-icon="bolt" aria-labelledby="speed-title">
+    <div class="wrap wrap--rail">
+      <p class="num"><b>07</b> Speed</p>
+      <div class="cap">
+        <div class="cap__body">
+          <h3 id="speed-title">From 11.9 s to 3.5 s <em>on a phone</em></h3>
+          <p class="cap__lead">Many stores reach a developer already slow: heavy fonts, slider plugins and a banner almost 4,000 pixels wide. I built Inkly's home page that way, measured it, then fixed it.</p>
+          <div class="toy race" data-dec=".">
+            <div class="toy__head"><p class="label">Time until the main content shows</p></div>
+            <div class="lane lane--before"><b>Before</b><div class="track"><i></i></div><output>11.9 s</output></div>
+            <div class="lane lane--after is-done"><b>After</b><div class="track"><i style="transform:scaleX(.294)"></i></div><output>3.5 s</output></div>
+            <div class="race__foot"><span>Same phone, replayed 3.4× faster</span><button class="again" type="button"><svg aria-hidden="true"><use href="#i-again"/></svg>Run it again</button></div>
+          </div>
+          <dl class="stats">
+            <div class="stat"><dt><s>47</s>74</dt><dd>Google's mobile speed score (Lighthouse)</dd></div>
+            <div class="stat"><dt><s>91</s>100</dt><dd>Accessibility score</dd></div>
+          </dl>
+          <p class="note">Median of five runs, same store and settings. On your store I measure the same way before and after, and show how much of the weight is Shopify's own scripts and your apps.</p>
+        </div>
+        <div class="cap__media rise">
+          <div class="frame">
+            <div class="frame__bar"><i></i><i></i><i></i><span>Before and after, side by side</span></div>
+            <a class="video" href="https://www.youtube.com/watch?v=Vpt_8GRCpnU" data-yt="Vpt_8GRCpnU" data-title="Store speed on mobile, before and after">
+              <img src="/img/speed-640.webp" srcset="/img/speed-640.webp 640w, /img/speed-1280.webp 1280w" sizes="(min-width:1000px) 42rem, calc(100vw - 40px)" width="1280" height="720" alt="The slow version and the final store loading side by side on the same phone" loading="lazy" decoding="async">
+              <span class="play"><i><svg aria-hidden="true"><use href="#i-play"/></svg></i>Watch · 0:57</span>
+            </a>
+          </div>
+          <p class="media-note"><span>Lighthouse 13.5, mobile</span><span>Inkly home page</span></p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="chapter" id="apps" data-stop data-num="08" data-short="Apps" data-icon="plug" aria-labelledby="apps-title">
+    <div class="wrap wrap--rail">
+      <p class="num"><b>08</b> Apps &amp; integrations</p>
+      <div class="cap">
+        <div class="cap__body">
+          <h3 id="apps-title">Orders reach the ERP, <em>tracking comes back</em></h3>
+          <p class="cap__lead">Someone copies each new order into the ERP and, once it ships, pastes the tracking number back into Shopify. Inkly ERP Sync, an app inside the Shopify admin, does both on its own.</p>
+          <div class="toy sync">
+            <div class="toy__head"><p class="label">One order, start to finish</p></div>
+            <div class="sync__row">
+              <span class="sync__node sync__node--shop">Shopify</span>
+              <span class="sync__node">App</span>
+              <span class="sync__node">ERP</span>
+              <div class="sync__lane" aria-hidden="true">
+                <div class="sync__go"><span class="sync__pkt"><i></i><span>Order #1001</span></span></div>
+                <div class="sync__back"><span class="sync__pkt"><i></i><span>Tracking</span></span></div>
+              </div>
+            </div>
+            <p class="sync__static">Order → ERP · tracking → Shopify</p>
+            <div class="sync__foot"><span>Under half a second each way</span><span>Order marked fulfilled</span></div>
+          </div>
+          <ul class="feats">
+            <li>If the ERP is down, the order waits and goes again with one click</li>
+            <li>A repeated notice never creates a second order</li>
+            <li>No customer name, email or address leaves Shopify</li>
+          </ul>
+        </div>
+        <div class="cap__media rise">
+          <div class="frame">
+            <div class="frame__bar"><i></i><i></i><i></i><span>Inkly ERP Sync, in the Shopify admin</span></div>
+            <a class="video" href="https://www.youtube.com/watch?v=J6ymdCDhGMs" data-yt="J6ymdCDhGMs" data-title="Inkly ERP Sync: orders to the ERP, tracking numbers back">
+              <img src="/img/erp-640.webp" srcset="/img/erp-640.webp 640w, /img/erp-1280.webp 1280w" sizes="(min-width:1000px) 42rem, calc(100vw - 40px)" width="1280" height="720" alt="Diagram: an order leaves Shopify, goes through the app to the ERP, and the tracking number comes back" loading="lazy" decoding="async">
+              <span class="play"><i><svg aria-hidden="true"><use href="#i-play"/></svg></i>Watch · 0:47</span>
+            </a>
+          </div>
+          <p class="media-note"><span>The ERP is simulated in the demo</span><a href="https://github.com/bielvelozo/inkly-erp-sync" target="_blank" rel="noopener">Code on GitHub ↗</a></p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="chapter" id="how" data-stop data-num="09" data-short="Process" data-icon="check" aria-labelledby="how-title">
+    <div class="wrap wrap--rail">
+      <p class="num"><b>09</b> How I work</p>
+      <h3 id="how-title">No surprises on <em>your live store</em></h3>
+      <div class="how">
+        <div class="how__about">
+          <p class="hi">Hi, I'm Gabriel.</p>
+          <p>I'm a Shopify developer in Brazil. Since March 2026 I've been the main contributor to the Shopify Plus theme of a live store that sells personalized photo albums: product pages with a live preview, the cart drawer, the checkout, landing pages and speed.</p>
+          <p>I can't show that store, so I built these four to show the same kind of work in public.</p>
+        </div>
+        <ol class="steps">
+          <li><b>1</b><span>We agree on the scope and the price in writing before I start.</span></li>
+          <li><b>2</b><span>I work on a copy of your theme. Nothing goes live until you approve it.</span></li>
+          <li><b>3</b><span>I test every change on a phone and on a computer before I deliver.</span></li>
+          <li><b>4</b><span>I'm in Brazil (UTC−3, one or two hours ahead of New York). I work in writing and you get an update every two days.</span></li>
+        </ol>
+      </div>
+    </div>
+  </section>
+
+  <div class="night">
+    <section class="chapter" id="contact" data-stop data-num="10" data-short="Contact" data-icon="mail" aria-labelledby="contact-title">
+      <div class="wrap wrap--rail">
+        <p class="num"><b>10</b> Contact</p>
+        <h2 id="contact-title">Let's build <em>yours.</em></h2>
+        <p class="night__lead">Send me your store's address and what you need. You get the scope and a fixed price in writing before I start.</p>
+        <p class="promo"><i aria-hidden="true"></i>30% off your first project with me</p>
+        <div class="ctas">
+          <a class="btn btn--paper" href="mailto:gabrielvelozodev@gmail.com?subject=Shopify%20project">Email me</a>
+          <button class="btn btn--ghost" type="button" data-copy="gabrielvelozodev@gmail.com" data-done="Email copied">Copy email</button>
+          <a class="btn btn--ghost" href="https://www.fiverr.com/bielvelozo" target="_blank" rel="noopener">Hire me on Fiverr <svg class="ext" aria-hidden="true"><use href="#i-ext"/></svg></a>
+        </div>
+        <p class="mail"><a href="mailto:gabrielvelozodev@gmail.com">gabrielvelozodev@gmail.com</a>, or reply to the message or proposal that brought you here.</p>
+        <footer class="foot">
+          <p>Arara, Dewlane, Nocte and Inkly are demo stores: the products are fictional and nothing ships. Code: <a href="https://github.com/bielvelozo/inkly-shopify-theme" target="_blank" rel="noopener">Inkly theme</a> · <a href="https://github.com/bielvelozo/inkly-erp-sync" target="_blank" rel="noopener">Inkly ERP Sync</a></p>
+          <p>Gabriel Velozo · <a href="/br/" hreflang="pt-BR" lang="pt-BR">Versão em português</a></p>
+        </footer>
+      </div>
+    </section>
+  </div>
+</main>
+
+<a class="dock" href="mailto:gabrielvelozodev@gmail.com?subject=Shopify%20project"><i aria-hidden="true"></i>Email me</a>
+<div class="peek" aria-hidden="true"><img alt=""></div>
+<p class="sr" id="live" aria-live="polite"></p>
+<script src="/site.js" defer></script>
+</body>
+</html>

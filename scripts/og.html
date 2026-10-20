@@ -1,0 +1,59 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<style>
+@font-face{font-family:"Instrument Serif";src:url(../site/fonts/instrument-serif-400.woff2) format("woff2")}
+@font-face{font-family:"Instrument Serif";src:url(../site/fonts/instrument-serif-400-italic.woff2) format("woff2");font-style:italic}
+@font-face{font-family:"Inter Tight";src:url(../site/fonts/inter-tight-var.woff2) format("woff2");font-weight:100 900}
+@font-face{font-family:"Geist Mono";src:url(../site/fonts/geist-mono-500.woff2) format("woff2");font-weight:500}
+html,body{margin:0;width:1200px;height:630px;overflow:hidden}
+body{position:relative;background:#F3F1EC;color:#17181B;font-family:"Inter Tight",sans-serif}
+.label{position:absolute;left:80px;top:72px;font:500 17px "Geist Mono",monospace;letter-spacing:.08em;text-transform:uppercase;color:#66686E}
+h1{position:absolute;left:76px;top:112px;width:720px;margin:0;font:400 104px/.9 "Instrument Serif",serif;letter-spacing:-.028em}
+h1 em{font-style:italic}
+.ruler{position:absolute;left:80px;top:470px;width:420px;height:20px;background:linear-gradient(#17181B,#17181B) left bottom/100% 1.5px no-repeat,repeating-linear-gradient(90deg,#17181B 0 1.5px,transparent 1.5px 60px) left bottom/100% 100% no-repeat,repeating-linear-gradient(90deg,#17181B 0 1px,transparent 1px 12px) left bottom/100% 45% no-repeat}
+.ruler i{position:absolute;left:300px;top:4px;width:14px;height:14px;border-radius:50%;background:#FF5B2E;box-shadow:0 0 0 4px #F3F1EC}
+.foot{position:absolute;left:80px;bottom:56px;display:flex;align-items:center;gap:14px;font:600 24px "Inter Tight",sans-serif}
+.foot b{width:14px;height:14px;border-radius:50%;background:#FF5B2E;box-shadow:0 0 0 4px rgba(255,91,46,.18)}
+.foot span{margin-left:18px;padding:8px 16px;border:1px solid #D3CEC4;border-radius:999px;background:#EAE7E0;font-weight:500;font-size:19px}
+.route{position:absolute;left:880px;top:64px;bottom:64px;width:2px}
+.route::before{content:"";position:absolute;inset:0;left:.5px;width:1px;background:#D3CEC4}
+.route::after{content:"";position:absolute;left:0;top:0;width:2px;height:85.7%;background:#17181B}
+.stop{position:absolute;left:-6px;width:13px;height:13px;border-radius:50%;box-sizing:border-box;border:1.5px solid #D3CEC4;background:#F3F1EC}
+.stop.on{border-color:#17181B;background:#17181B}
+.stop span{position:absolute;left:38px;top:-9px;white-space:nowrap;font:400 26px/1 "Instrument Serif",serif}
+.stop small{font:500 13px "Geist Mono",monospace;color:#66686E;margin-right:10px;vertical-align:3px}
+.dot{position:absolute;left:-21px;width:44px;height:44px;border-radius:50%;background:#17181B;box-shadow:0 0 0 5px #F3F1EC,0 0 0 7px #FF5B2E}
+</style>
+</head>
+<body>
+<p class="label" id="label"></p>
+<h1 id="title"></h1>
+<div class="ruler"><i></i></div>
+<div class="foot"><b></b>Gabriel Velozo<span id="promo"></span></div>
+<div class="route" id="route"></div>
+<script>
+var pt = location.hash === '#pt';
+document.getElementById('label').textContent = pt ? 'Desenvolvedor Shopify · Brasil' : 'Shopify developer · Brazil';
+document.getElementById('title').innerHTML = pt ? 'Lojas Shopify que vendem, <em>feitas sob medida.</em>' : 'Shopify stores that sell, <em>made to measure.</em>';
+document.getElementById('promo').textContent = pt ? '30% off no primeiro projeto' : '30% off your first project';
+var names = pt ? ['Arara', 'Dewlane', 'Nocte', 'Inkly', 'Produto', 'Checkout', 'Velocidade', 'Apps'] : ['Arara', 'Dewlane', 'Nocte', 'Inkly', 'Product page', 'Checkout', 'Speed', 'Apps'];
+var route = document.getElementById('route');
+var h = 630 - 128;
+names.forEach(function (n, i) {
+  var s = document.createElement('div');
+  var y = Math.round(i * h / (names.length - 1));
+  s.className = 'stop' + (y <= h * 0.858 ? ' on' : '');
+  s.style.top = (y - 6) + 'px';
+  s.innerHTML = '<span><small>0' + (i + 1) + '</small>' + n + '</span>';
+  route.appendChild(s);
+});
+var d = document.createElement('div');
+d.className = 'dot';
+d.style.top = Math.round(h * 6 / 7 - 22) + 'px';
+d.innerHTML = '<svg viewBox="0 0 24 24" width="20" height="20" style="margin:12px" fill="none" stroke="#F3F1EC" stroke-width="1.7" stroke-linejoin="round"><path d="M13.5 2.5 5 13.5h6.5l-1 8 8.5-11h-6.5l1-8Z"/></svg>';
+route.appendChild(d);
+</script>
+</body>
+</html>
