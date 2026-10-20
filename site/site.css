@@ -181,6 +181,8 @@ main{position:relative}
 .result b{font-weight:600;color:var(--ink)}
 .actions{display:flex;flex-wrap:wrap;align-items:center;gap:12px;margin-top:26px}
 
+.code{margin-left:4px;font:500 13px var(--mono);color:var(--ink-2);text-underline-offset:.3em}
+.code:hover{color:var(--ink)}
 .pass{display:inline-flex;align-items:center;gap:8px;height:50px;padding:0 18px;border:1px dashed var(--ink-3);border-radius:999px;background:transparent;font:500 13px var(--mono);color:var(--ink-2);cursor:pointer;transition:border-color .2s,background-color .2s}
 .pass code{font:inherit;color:var(--ink)}
 .pass svg{width:15px;height:15px}
@@ -325,6 +327,7 @@ main{position:relative}
   .sync__lane{left:32px;right:32px}
   .actions .btn{flex:1 1 auto}
   .pass{flex:1 1 auto;justify-content:center}
+  .code{flex:1 0 100%;margin:4px 0 0;text-align:center}
   .toy{padding:16px}
   .proof__tabs{gap:5px}
   .proof__tab{height:36px;padding:0 11px 0 9px;font-size:13.5px}
