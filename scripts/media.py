@@ -6,10 +6,12 @@ from PIL import Image
 root = Path(__file__).resolve().parents[1]
 site = root / "site"
 dev = root.parent
-old = dev / "shopify-portfolio" / "site"
 
-COPY = ["arara3", "dewlane2", "nocte3", "tour", "personalizer", "cart", "speed", "erp"]
-VIDEOS = ["arara3", "dewlane2", "nocte3"]
+VIDEOS = {
+    "arara3": dev / "arara-shopify-theme/vitrine/arara-demo",
+    "dewlane2": dev / "dewlane-shopify-theme/vitrine/dewlane",
+    "nocte3": dev / "nocte-shopify-theme/vitrine/nocte-demo",
+}
 
 PROOFS = {
     "p-nocte-engraving": dev / "nocte-shopify-theme/vitrine/03-product-engraving.jpg",
@@ -21,7 +23,8 @@ PROOFS = {
 PHONE = {"c-arara-cart": dev / "arara-shopify-theme/vitrine/05-cart-mobile.jpg"}
 
 
-def webp(img, dest, width):
+def webp(src, dest, width):
+    img = Image.open(src).convert("RGB")
     h = round(img.height * width / img.width)
     img.resize((width, h), Image.LANCZOS).save(dest, "WEBP", quality=80, method=6)
 
@@ -29,21 +32,19 @@ def webp(img, dest, width):
 def main():
     (site / "img").mkdir(parents=True, exist_ok=True)
     (site / "video").mkdir(parents=True, exist_ok=True)
-    for name in COPY:
+    for name, base in VIDEOS.items():
+        shutil.copyfile(base.with_name(base.name + ".mp4"), site / "video" / f"{name}.mp4")
+        poster = base.with_name(base.name + "-poster.jpg")
         for w in (640, 1280):
-            shutil.copyfile(old / "img" / f"{name}-{w}.webp", site / "img" / f"{name}-{w}.webp")
-    for name in VIDEOS:
-        shutil.copyfile(old / "video" / f"{name}.mp4", site / "video" / f"{name}.mp4")
+            webp(poster, site / "img" / f"{name}-{w}.webp", w)
     for name, src in PROOFS.items():
-        img = Image.open(src).convert("RGB")
         for w in (720, 1280):
-            webp(img, site / "img" / f"{name}-{w}.webp", w)
+            webp(src, site / "img" / f"{name}-{w}.webp", w)
     for name, src in PHONE.items():
-        img = Image.open(src).convert("RGB")
         for w in (360, 720):
-            webp(img, site / "img" / f"{name}-{w}.webp", w)
+            webp(src, site / "img" / f"{name}-{w}.webp", w)
     for f in sorted((site / "img").iterdir()):
-        print(f.name, f.stat().st_size, Image.open(f).size)
+        print(f.name, f.stat().st_size)
 
 
 if __name__ == "__main__":
