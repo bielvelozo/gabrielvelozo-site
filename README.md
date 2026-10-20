@@ -9,6 +9,6 @@ wrangler pages deploy site --project-name gabrielvelozo --branch main
 ```
 
 - `scripts/media.py` copies the store videos and converts the store prints to WebP.
-- `scripts/og.html` is the share image; render it at 1200×630 (add `#pt` for the Portuguese one).
+- `scripts/og.html` is the share image; render it at 1200×630 (add `#pt` for the Portuguese one) and save it under a new name (og2.jpg, og3.jpg…), because `/img/*` is cached for a week.
 
 Fonts: Instrument Serif, Inter Tight and Geist Mono, all under the SIL Open Font License 1.1 (via Fontsource).
