@@ -48,7 +48,7 @@
 
 <header class="top">
   <div class="wrap top__bar">
-    <a class="brand" href="#top" aria-label="Gabriel Velozo, back to the top"><span class="brand__dot"></span>Gabriel Velozo <small>Shopify developer</small></a>
+    <a class="brand" href="#top"><span class="brand__dot"></span>Gabriel Velozo <small>Shopify developer</small></a>
     <nav class="nav" aria-label="Sections">
       <a href="#stores">Stores</a>
       <a href="#inside">Inside a store</a>
@@ -56,8 +56,8 @@
       <a href="#contact">Contact</a>
     </nav>
     <div class="top__end">
-      <button class="here" type="button" aria-expanded="false" aria-controls="route-sheet" data-start="Route" aria-label="Where you are on the route; open the list of stops"><span class="here__icon"><svg aria-hidden="true"><use href="#i-route"/></svg></span><span class="here__num">00</span><span class="here__name">Route</span></button>
-      <a class="lang" href="/br/" hreflang="pt-BR" lang="pt-BR" aria-label="Versão em português">PT</a>
+      <button class="here" type="button" aria-expanded="false" aria-controls="route-sheet" data-start="Route"><span class="here__icon"><svg aria-hidden="true"><use href="#i-route"/></svg></span><span class="here__num">00</span> <span class="here__name">Route</span><span class="sr">, open the list of stops</span></button>
+      <a class="lang" href="/br/" hreflang="pt-BR" lang="pt-BR">PT<span class="sr"> · versão em português</span></a>
     </div>
   </div>
   <div class="progress" aria-hidden="true"></div>
@@ -470,6 +470,6 @@
 <a class="dock" href="mailto:gabrielvelozodev@gmail.com?subject=Shopify%20project"><i aria-hidden="true"></i>Email me</a>
 <div class="peek" aria-hidden="true"><img alt=""></div>
 <p class="sr" id="live" aria-live="polite"></p>
-<script src="/site.js" defer></script>
+<script>addEventListener("load",function(){var s=document.createElement("script");s.src="/site.js";document.body.appendChild(s)})</script>
 </body>
 </html>

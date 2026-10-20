@@ -193,7 +193,19 @@
     for (var n = 0; n < nodes.length; n++) nodes[n].classList.toggle('is-passed', ys[n] - ys[0] <= y + 1);
   }
 
-  function queue() { if (!queued) { queued = true; raf(update); } }
+  var measured = false;
+  function start() {
+    if (measured) return;
+    measured = true;
+    measure();
+    if (document.fonts && document.fonts.ready) document.fonts.ready.then(remeasure);
+    if ('ResizeObserver' in window) new ResizeObserver(remeasure).observe(document.body);
+    else window.addEventListener('resize', remeasure);
+  }
+  function queue() {
+    if (!measured) { start(); return; }
+    if (!queued) { queued = true; raf(update); }
+  }
   window.addEventListener('scroll', queue, { passive: true });
 
   var remeasure = (function () {
@@ -215,7 +227,7 @@
     }
   }
   if (here && sheet) {
-    here.addEventListener('click', function () { openSheet(sheet.hidden); });
+    here.addEventListener('click', function () { start(); openSheet(sheet.hidden); });
     sheet.addEventListener('click', function (e) { if (e.target.closest('a')) openSheet(false); });
     document.addEventListener('click', function (e) {
       if (!sheet.hidden && !sheet.contains(e.target) && !here.contains(e.target)) openSheet(false);
@@ -370,12 +382,5 @@
     }
   }
 
-  window.addEventListener('load', function () {
-    idle(function () {
-      measure();
-      if (document.fonts && document.fonts.ready) document.fonts.ready.then(remeasure);
-      if ('ResizeObserver' in window) new ResizeObserver(remeasure).observe(document.body);
-      else window.addEventListener('resize', remeasure);
-    });
-  });
+  if (window.scrollY > 0) idle(start);
 })();
