@@ -267,7 +267,9 @@ main{position:relative}
 
 .sync__row{position:relative;display:flex;justify-content:space-between;align-items:center;height:60px;margin-block:30px}
 .sync__node{position:relative;z-index:1;display:grid;place-items:center;min-width:74px;height:44px;padding:0 10px;border:1px solid var(--ink);border-radius:12px;background:var(--paper);font:500 12.5px var(--mono);transition:background-color .3s,color .3s}
-.sync__lane{position:absolute;z-index:2;left:37px;right:37px;top:50%;height:1px;background:repeating-linear-gradient(90deg,var(--ink-3) 0 4px,transparent 4px 8px)}
+.sync__row::before,.sync__lane{content:"";position:absolute;left:37px;right:37px;top:50%;height:1px}
+.sync__row::before{background:repeating-linear-gradient(90deg,var(--ink-3) 0 4px,transparent 4px 8px)}
+.sync__lane{z-index:2}
 .sync__go,.sync__back{position:absolute;inset:0;transform:translateX(0)}
 .sync__pkt{position:absolute;left:0;top:0;display:flex;align-items:center;gap:6px;transform:translate(-50%,-50%);font:500 11px var(--mono);white-space:nowrap}
 .sync__pkt i{width:12px;height:12px;border-radius:50%;background:var(--signal);box-shadow:0 0 0 3px #F8F7F3}
@@ -326,7 +328,7 @@ main{position:relative}
   .stat dt{font-size:32px}
   .lane{grid-template-columns:54px minmax(0,1fr) 58px;gap:8px}
   .sync__node{min-width:64px;font-size:11.5px}
-  .sync__lane{left:32px;right:32px}
+  .sync__row::before,.sync__lane{left:32px;right:32px}
   .actions .btn{flex:1 1 auto}
   .pass{flex:1 1 auto;justify-content:center}
   .code{flex:1 0 100%;margin:4px 0 0;text-align:center}
