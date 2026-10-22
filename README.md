@@ -1,4 +1,4 @@
-# gabrielvelozo.pages.dev
+# velozo.dev
 
 Gabriel Velozo's site as a Shopify developer, in English (`/`) and Brazilian Portuguese (`/br/`). It walks a visitor along a line through four demo stores (Arara, Dewlane, Nocte, Inkly) and the parts of a store he builds: product page, cart and checkout, speed, apps.
 
